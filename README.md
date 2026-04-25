@@ -114,7 +114,7 @@ docker compose down
 
 Опубликованный образ доступен в Docker Hub:
 
-- Репозиторий: https://hub.docker.com/r/artsiomk/ml-implementation
+- Репозиторий: https://hub.docker.com/r/artsiomk/ml-implementation/tags
 - Теги: `v1.1.0`, `latest`
 
 Запуск без сборки:
