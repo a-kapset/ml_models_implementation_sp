@@ -20,25 +20,27 @@ ml_models_implementation_draft/
 │   ├── __init__.py
 │   ├── api.py                эндпоинты /health, /predict, JSON-логирование
 │   └── model_handler.py      загрузка моделей, валидация, A/B-маршрутизация
-├── models/                   обучение и артефакты модели
-│   ├── train_model.py        обучение v1 и v2, сохранение в .pkl
-│   ├── model_v1.pkl
-│   └── model_v2.pkl
-├── tests/                    pytest-тесты модели и API
-│   ├── test_model.py
-│   └── test_api.py
+├── data/
+│   └── UCI_Credit_Card.csv   датасет (30000 строк)
 ├── docker/
 │   ├── Dockerfile            python:3.11-slim, EXPOSE 5000, healthcheck
 │   └── nginx.conf            reverse proxy на ml-service:5000
 ├── docs/
-│   ├── ARCHITECTURE.md       обоснование архитектуры, MLOps-концепты, бизнес-метрики
-│   └── ab_test_plan.md       план A/B-теста v1 vs v2
-├── data/
-│   └── UCI_Credit_Card.csv   датасет (30000 строк)
+│   ├── ab_test_plan.md       план A/B-теста v1 vs v2
+│   └── ARCHITECTURE.md       обоснование архитектуры, MLOps-концепты, бизнес-метрики
+├── models/                   обучение и артефакты модели
+│   ├── model_v1.pkl
+│   ├── model_v2.pkl
+│   └── train_model.py        обучение v1 и v2, сохранение в .pkl
+├── tests/                    pytest-тесты модели и API
+│   ├── test_api.py
+│   └── test_model.py
+├── .dockerignore
+├── .gitignore
 ├── docker-compose.yml        ml-service + nginx
-├── requirements.txt
 ├── pyproject.toml            настройка pytest pythonpath
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ## Установка и локальный запуск
