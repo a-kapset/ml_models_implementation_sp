@@ -1,0 +1,16 @@
+.venv/
+.git/
+.gitignore
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+tests/
+docs/
+progress/
+scripts/
+*.md
+pyproject.toml
+.claude/
+.vscode/
+docker/

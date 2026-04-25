@@ -1,0 +1,21 @@
+services:
+  ml-service:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: credit-default-service:v1.0.0
+    container_name: credit-default-ml-service
+    expose:
+      - "5000"
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    container_name: credit-default-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - ml-service
+    restart: unless-stopped
